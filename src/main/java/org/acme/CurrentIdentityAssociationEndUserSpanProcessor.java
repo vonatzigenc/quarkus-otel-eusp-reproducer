@@ -46,7 +46,8 @@ public class CurrentIdentityAssociationEndUserSpanProcessor implements SpanProce
     }
 
     // Original implementation from io.quarkus.opentelemetry.runtime.exporter.otlp.EndUserSpanProcessor
-    // Issue: "ActivateRequestContext" is for the moment where the "Runnable" is added, but not when the "securityIdentity" is accessed.
+    // Issue 1: "ActivateRequestContext" is for the moment where the "Runnable" is added, but not when the "securityIdentity" is accessed.
+    // Issue 2: execution of the "Runnable" can be even after the Span is already exported.
     //    @Override
     //    @ActivateRequestContext
     //    public void onStart(Context parentContext, ReadWriteSpan span) {
