@@ -8,6 +8,8 @@ There are two cases:
 1. The SecurityIdentity is not available anymore (Because the request is already finished). This will lead to the `ContextNotActiveException`.
 2. The Span is already ended. This will lead to the log message "Calling setAttribute() on an ended Span."
 
+Reason for ExecutorService: https://github.com/quarkusio/quarkus/pull/34595#issuecomment-1626934892
+
 ## Exception / Stacktrace
 ```
 jakarta.enterprise.context.ContextNotActiveException: RequestScoped context was not active when trying to obtain a bean instance for a client proxy of CLASS bean [class=io.quarkus.security.runtime.SecurityIdentityProxy, id=U3fuB4yO9MSr82V2xU36xFn98dk]
