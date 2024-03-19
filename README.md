@@ -36,4 +36,4 @@ To simplify the setup, this project uses a custom SpanExporter. The `ValidatingN
 
 The test `GreetingResourceTest` uses the EndUserSpanProcessor implementation from Quarkus.
 
-The test `GreetingResourceWithAdjustedProcessorTest` uses a custom implementation of the EndUserSpanProcessor that doesn't use the `SecurityIdentity` from Quarkus.
+The test `GreetingResourceWithAdjustedProcessorTest` uses a `CurrentIdentityAssociationEndUserSpanProcessor` instead of the EndUserSpanProcessor from Quarkus to set the `enduser.id` and `enduser.role` attributes.

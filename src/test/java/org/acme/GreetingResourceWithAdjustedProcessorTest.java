@@ -23,6 +23,7 @@ class GreetingResourceWithAdjustedProcessorTest {
    public static class Profile implements QuarkusTestProfile {
         @Override
         public Map<String, String> getConfigOverrides() {
+            //this will enable org.acme.CurrentIdentityAssociationEndUserSpanProcessor instead of io.quarkus.opentelemetry.runtime.exporter.otlp.EndUserSpanProcessor
             return Map.of("quarkus.otel.traces.eusp.enabled", "false");
         }
     }
